@@ -36,7 +36,7 @@ void main() {
       'fetchCryptoHash emits [Loading, FetchHash] when successful',
       build: () => transactionCubit,
       setUp: () {
-        when(mockTransactionRepository.fetchCrypto()).thenAnswer((_) async => Right(AppBaseResponse(message: "0000000000000000000134caea3cb6b375fc75b633934efc1438bf4418d9fdd9")));
+        when(mockTransactionRepository.getLatestBlock()).thenAnswer((_) async => Right(AppBaseResponse(message: "0000000000000000000134caea3cb6b375fc75b633934efc1438bf4418d9fdd9")));
       },
       act: (cubit) => cubit.getLatestBlock(),
       expect: () => <TransactionState>[
@@ -49,7 +49,8 @@ void main() {
       'fetchCryptoHash emits [Loading, TxnError] when fails',
       build: () => transactionCubit,
       setUp: () {
-        when(mockTransactionRepository.fetchCrypto()).thenAnswer((_) async => const Left('Error message'));
+        when(mockTransactionRepository.
+            getLatestBlock()).thenAnswer((_) async => const Left('Error message'));
       },
       act: (cubit) => cubit.getLatestBlock(),
       expect: () => <TransactionState>[
@@ -61,7 +62,7 @@ void main() {
       'fetchCryptoHash emits [Loading, TxnError] when it throws an exception',
       build: () => transactionCubit,
       setUp: () {
-        when(mockTransactionRepository.fetchCrypto()).thenThrow(Exception('Failed fetch crypto'));
+        when(mockTransactionRepository.getLatestBlock()).thenThrow(Exception('Failed fetch crypto'));
       },
       act: (cubit) => cubit.getLatestBlock(),
       expect: () => <TransactionState>[

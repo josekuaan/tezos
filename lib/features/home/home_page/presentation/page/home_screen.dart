@@ -217,12 +217,12 @@ class HomeScreen extends StatelessWidget {
 
             ListTile(
               leading: SvgPicture.asset(
-                "assets/images/tezos.svg",
-                height: 30,
-                width: 30,
+                "assets/images/solana.svg",
+                height: 40,
+                width: 40,
 
               ),
-              title: const  Text("Tezos",style: TextStyle(
+              title: const  Text("Solana",style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 16,
                   fontFamily: "Inter")),
@@ -256,7 +256,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              subtitle:const  Text("XTZ",
+              subtitle:const  Text("SOL",
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 14,
@@ -392,22 +392,42 @@ class HomeScreen extends StatelessWidget {
                         border: Border.all(width: 0.5,color: lightBlueGrey),
                         borderRadius: BorderRadius.circular(8)
                     ),
-                    child: const Column(
+                    child:  Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(Icons.ac_unit_outlined,size: 40,),
+                        SvgPicture.asset(
+                          "assets/images/solana.svg",
+                          height: 40,
+                          width: 40,
+
+                        ),
                         SizedBox(height: 5),
-                        Text("Solana",
+                        const  Text("Solana",
                             style: TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16,
                                 fontFamily: "Inter")),
                         SizedBox(height: 5),
-                        Text("1.76%",style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: green,
-                            fontSize: 14,
-                            fontFamily: "Inter")),
+                        SizedBox(
+                          width: 100,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SvgPicture.asset(
+                                "assets/images/arrow-up-right.svg",
+                                height: 20,
+                                width: 20,
+
+                              ),
+
+                              const  Text("1.76%",style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: green,
+                                  fontSize: 14,
+                                  fontFamily: "Inter")),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),

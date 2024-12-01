@@ -97,28 +97,28 @@ class MockTransactionRepository extends _i1.Mock
       ) as _i3.Dio);
 
   @override
-  _i6.Future<_i4.Either<String, _i7.AppBaseResponse>> fetchCrypto() =>
+  _i6.Future<_i4.Either<String, _i7.AppBaseResponse>> getLatestBlock() =>
       (super.noSuchMethod(
         Invocation.method(
-          #fetchCrypto,
+          #getLatestBlock,
           [],
         ),
         returnValue: _i6.Future<_i4.Either<String, _i7.AppBaseResponse>>.value(
             _FakeEither_2<String, _i7.AppBaseResponse>(
           this,
           Invocation.method(
-            #fetchCrypto,
+            #getLatestBlock,
             [],
           ),
         )),
       ) as _i6.Future<_i4.Either<String, _i7.AppBaseResponse>>);
 
   @override
-  _i6.Future<_i4.Either<String, _i8.TransactionResponse>> fetchCryptoByHash(
+  _i6.Future<_i4.Either<String, _i8.TransactionResponse>> getTxnByHash(
           {required String? hash}) =>
       (super.noSuchMethod(
         Invocation.method(
-          #fetchCryptoByHash,
+          #getTxnByHash,
           [],
           {#hash: hash},
         ),
@@ -127,7 +127,7 @@ class MockTransactionRepository extends _i1.Mock
                 _FakeEither_2<String, _i8.TransactionResponse>(
           this,
           Invocation.method(
-            #fetchCryptoByHash,
+            #getTxnByHash,
             [],
             {#hash: hash},
           ),
